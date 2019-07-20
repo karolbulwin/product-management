@@ -15,6 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star/star.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductDetailComponent } from './products-list/product-detail/product-detail.component';
+import { WelcomeComponent } from './home/welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -22,7 +24,9 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     ProductsListComponent,
     ConvertToSpacesPipe,
-    StarComponent
+    StarComponent,
+    ProductDetailComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
