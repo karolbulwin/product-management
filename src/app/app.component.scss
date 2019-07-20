@@ -1,0 +1,28 @@
+.navbar {
+  background: #ffffff;
+  padding: 1em;
+  box-shadow: 1px 0 10px 1px rgba(0, 0, 0, 0.303);
+  user-select: none;
+  a {
+    text-decoration: none;
+    color: #757575;
+    transition-duration: 300ms;
+    &:hover {
+      color: black;
+    }
+  }
+  > a {
+    color: rgb(9, 77, 51);
+    &:hover {
+      color: darken($color: rgb(9, 77, 51), $amount: 10%);
+    }
+  }
+  .nav {
+    display: inline;
+    margin: 0;
+    padding-left: 2em;
+    a {
+      padding-left: 1em;
+    }
+  }
+}

@@ -1,8 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>{{ title }}</h1>
-</div>
-<app-products-list></app-products-list>
-<!-- <app-products-list2></app-products-list2> -->
-
+<nav class="navbar">
+  <a [routerLink]="['/welcome']">{{ title }}</a>
+  <ul class="nav">
+    <a [routerLink]="['/welcome']">Home</a>
+    <a [routerLink]="['/products']">Products</a>
+  </ul>
+</nav>
 <router-outlet></router-outlet>
