@@ -1,0 +1,21 @@
+.root {
+  position: relative;
+  .crop-stars-container {
+    overflow: hidden;
+    .stars-container {
+      display: inline-flex;
+      width: 120px;
+      .star {
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+        i {
+          width: 24px;
+        }
+      }
+    }
+    .static {
+      position: absolute;
+    }
+  }
+}
