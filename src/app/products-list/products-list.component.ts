@@ -23,18 +23,23 @@ export class ProductsListComponent implements OnInit {
   products: IProduct[];
   dataSource: MatTableDataSource<IProduct>;
   showImage: boolean = false;
+  errorMessage: string;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   constructor(private productService: ProductService) {}
 
-  ngOnInit() {
-    this.products = this.productService.getProducts();
-    this.dataSource = new MatTableDataSource(this.products);
-
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe(
+      products => {
+        this.products = products;
+        this.dataSource = new MatTableDataSource(this.products);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      },
+      error => (this.errorMessage = <any>error)
+    );
   }
 
   toggleImg(): void {
