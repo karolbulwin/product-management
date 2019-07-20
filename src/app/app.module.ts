@@ -11,7 +11,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ProductsListComponent } from './products-list/products-list.component';
-import { ProductComponent } from './product/product.component';
 import { MatButtonModule } from '@angular/material/button';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star/star.component';
@@ -22,7 +21,6 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AppComponent,
     ProductsListComponent,
-    ProductComponent,
     ConvertToSpacesPipe,
     StarComponent
   ],
