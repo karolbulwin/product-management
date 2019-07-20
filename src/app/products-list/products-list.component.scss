@@ -1,0 +1,33 @@
+.container {
+  padding: 1em;
+  max-width: 1000px;
+  margin: auto;
+  .overflow {
+    overflow: auto;
+  }
+}
+
+table {
+  width: 100%;
+  .img {
+    width: 50px;
+    margin: 2px;
+  }
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 20%;
+  &:nth-child(3),
+  &:nth-child(5) {
+    width: 10%;
+  }
+  &:nth-last-child(1) {
+    width: 16%;
+  }
+}
