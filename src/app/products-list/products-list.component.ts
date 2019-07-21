@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductService } from './product.service';
 import IProduct from './product';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-products-list',
@@ -28,7 +29,10 @@ export class ProductsListComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(
@@ -46,9 +50,10 @@ export class ProductsListComponent implements OnInit {
     this.showImage = !this.showImage;
   }
 
-  onRatingClicked(message: string): void {
-    console.log(message);
-    this.title += message;
+  onRatingClicked(message: string, action: string = 'Close'): void {
+    this._snackBar.open(message, action, {
+      duration: 2000
+    });
   }
 
   applyFilter(filterValue: string) {
