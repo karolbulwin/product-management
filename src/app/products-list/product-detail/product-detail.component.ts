@@ -9,7 +9,7 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-detail.component.scss']
 })
 export class ProductDetailComponent implements OnInit {
-  title: string = 'Product Detail';
+  title = 'Product Detail';
   product: IProduct;
 
   constructor(
@@ -23,7 +23,7 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.paramMap.get('id');
+    const id = +this.route.snapshot.paramMap.get('id');
     this.productService.getProduct(id).subscribe(product => {
       this.product = product;
     });

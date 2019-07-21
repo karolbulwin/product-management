@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent implements OnInit {
-  title: string = 'Product list';
+  title = 'Product list';
   displayedColumns: string[] = [
     'imageUrl',
     'productName',
@@ -23,7 +23,7 @@ export class ProductsListComponent implements OnInit {
   ];
   products: IProduct[];
   dataSource: MatTableDataSource<IProduct>;
-  showImage: boolean = false;
+  showImage = false;
   errorMessage: string;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -31,7 +31,7 @@ export class ProductsListComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private _snackBar: MatSnackBar
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -42,7 +42,7 @@ export class ProductsListComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
-      error => (this.errorMessage = <any>error)
+      error => (this.errorMessage = error as any)
     );
   }
 
@@ -51,7 +51,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   onRatingClicked(message: string, action: string = 'Close'): void {
-    this._snackBar.open(message, action, {
+    this.snackBar.open(message, action, {
       duration: 2000
     });
   }
