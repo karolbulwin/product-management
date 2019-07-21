@@ -19,6 +19,7 @@ import { ProductDetailComponent } from './products-list/product-detail/product-d
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { RouterModule } from '@angular/router';
 import { ProductDetailGuard } from './products-list/product-detail/product-detail.guard';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ProductDetailGuard } from './products-list/product-detail/product-detai
     ConvertToSpacesPipe,
     StarComponent,
     ProductDetailComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,7 @@ import { ProductDetailGuard } from './products-list/product-detail/product-detai
         component: ProductDetailComponent
       },
       { path: 'welcome', component: WelcomeComponent },
+      { path: 'pageNotFound', component: PageNotFoundComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
