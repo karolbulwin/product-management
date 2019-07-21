@@ -31,3 +31,11 @@ th {
     width: 16%;
   }
 }
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: underline;
+  }
+}
