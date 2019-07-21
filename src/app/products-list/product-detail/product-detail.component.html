@@ -1,0 +1,32 @@
+<div class="root">
+  <mat-card class="example-card card" *ngIf="product">
+    <mat-card-header>
+      <mat-card-title>{{ title }}</mat-card-title>
+      <mat-card-subtitle>{{ product.productName }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="container">
+        <div class="col">
+          <div>
+            {{ product.description }}
+          </div>
+          <div class="code">
+            Code: {{ product.productCode | lowercase | convertToSpaces: '-' }}
+          </div>
+          <div class="price">Price: {{ product.price | currency }}</div>
+          <div>Rating: <app-star [rating]="product.starRating"></app-star></div>
+        </div>
+        <div class="col">
+          <img
+            class="img"
+            [src]="product.imageUrl"
+            [alt]="product.productName | uppercase"
+          />
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="onBack()">Go back</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
