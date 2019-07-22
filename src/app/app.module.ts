@@ -7,11 +7,13 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductModule } from './products-list/product.module';
 import { MaterialModule } from './shared/material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, WelcomeComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     ProductModule,

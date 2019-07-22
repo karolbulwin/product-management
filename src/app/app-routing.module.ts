@@ -4,7 +4,11 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'welcome', component: WelcomeComponent },
+  {
+    path: 'welcome',
+    component: WelcomeComponent,
+    data: { animation: 'fader' }
+  },
   { path: 'pageNotFound', component: PageNotFoundComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
