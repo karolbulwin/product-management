@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path: 'welcome',
     component: WelcomeComponent,
-    data: { animation: 'fader' }
+    data: { animation: 'HomePage' }
   },
   { path: 'pageNotFound', component: PageNotFoundComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },

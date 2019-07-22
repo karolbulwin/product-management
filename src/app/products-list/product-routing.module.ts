@@ -5,9 +5,14 @@ import { ProductDetailGuard } from './product-detail/product-detail.guard';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const routes: Routes = [
-  { path: 'products', component: ProductsListComponent },
+  {
+    path: 'products',
+    data: { animation: 'ProductsListPage' },
+    component: ProductsListComponent
+  },
   {
     path: 'products/:id',
+    data: { animation: 'ProductPage' },
     canActivate: [ProductDetailGuard],
     component: ProductDetailComponent
   }
