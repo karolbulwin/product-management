@@ -63,7 +63,7 @@
         <ng-container matColumnDef="price">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
           <td mat-cell *matCellDef="let row">
-            {{ row.price | currency: 'USD':symbol }}
+            {{ row.price | currency: 'USD' }}
           </td>
         </ng-container>
 
