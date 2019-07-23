@@ -11,6 +11,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { ContactModule } from './contact/contact.module';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+const material = [MatToolbarModule];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,8 @@ import { ContactModule } from './contact/contact.module';
     HttpClientModule,
     ProductModule,
     AppRoutingModule,
-    ContactModule
+    ContactModule,
+    material
   ],
   exports: [],
   providers: [],
