@@ -12,15 +12,30 @@ import { AboutComponent } from './about/about.component';
 import { ContactModule } from './contact/contact.module';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { LayoutModule } from '@angular/cdk/layout';
+import { NavComponent } from './nav/nav.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
-const material = [MatToolbarModule];
+const material = [
+  MatToolbarModule,
+  LayoutModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     PageNotFoundComponent,
-    AboutComponent
+    AboutComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +45,7 @@ const material = [MatToolbarModule];
     ProductModule,
     AppRoutingModule,
     ContactModule,
-    material
+    material,
   ],
   exports: [],
   providers: [],
