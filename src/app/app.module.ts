@@ -9,19 +9,25 @@ import { ProductModule } from './products-list/product.module';
 import { MaterialModule } from './shared/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
-  declarations: [AppComponent, WelcomeComponent, PageNotFoundComponent, AboutComponent, ContactComponent],
+  declarations: [
+    AppComponent,
+    WelcomeComponent,
+    PageNotFoundComponent,
+    AboutComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     ProductModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ContactModule
   ],
-  exports: [MaterialModule],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
