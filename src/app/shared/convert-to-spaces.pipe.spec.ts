@@ -5,4 +5,9 @@ describe('ConvertToSpacesPipe', () => {
     const pipe = new ConvertToSpacesPipe();
     expect(pipe).toBeTruthy();
   });
+
+  it('should display string without dash', () => {
+    const pipe = new ConvertToSpacesPipe();
+    expect(pipe.transform('CXZX-CZXZS', '-')).toEqual('CXZX CZXZS');
+  });
 });
