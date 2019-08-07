@@ -7,9 +7,14 @@
   margin: 20px auto;
 }
 
-.mat-radio-button {
-  display: block;
-  margin: 5px 0;
+.notify-container {
+  margin-top: 1em;
+  .mat-radio-button {
+    margin: 0.8em 0;
+    &:last-of-type {
+      padding-left: 1em;
+    }
+  }
 }
 
 .row {
