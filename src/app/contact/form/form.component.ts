@@ -89,6 +89,12 @@ export class FormComponent {
 
   constructor(private fb: FormBuilder) {}
 
+  onFillNameClicked(): void {
+    this.addressForm.patchValue({
+      firstName: 'Karol'
+    });
+  }
+
   onSubmit() {
     // if (this.addressForm.status === 'VALID') {
     alert('Thanks! But this was a fake page :D');
