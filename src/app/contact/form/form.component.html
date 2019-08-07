@@ -95,7 +95,6 @@
             <input
               matInput
               #postalCode
-              maxlength="5"
               placeholder="Postal Code"
               type="number"
               formControlName="postalCode"
@@ -128,8 +127,6 @@
           <mat-form-field class="full-width">
             <input
               matInput
-              #postalCode
-              maxlength="5"
               placeholder="Phone"
               type="number"
               formControlName="phone"
@@ -168,6 +165,14 @@
         [disabled]="!addressForm.valid"
       >
         Submit
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="onFillNameClicked()"
+      >
+        Fill name
       </button>
     </mat-card-actions>
   </mat-card>
