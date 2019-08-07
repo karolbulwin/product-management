@@ -97,6 +97,21 @@ export class FormComponent {
     });
   }
 
+  onFillAllClicked(): void {
+    this.addressForm.setValue({
+      company: 'The best',
+      firstName: 'Some',
+      lastName: 'body',
+      address: 'Some',
+      city: 'where',
+      state: 'CA',
+      postalCode: '00000',
+      notification: 'text',
+      phone: null,
+      email: 'somebody@somewhere.com'
+    });
+  }
+
   onSubmit() {
     // if (this.addressForm.status === 'VALID') {
     alert('Thanks! But this was a fake page :D');
