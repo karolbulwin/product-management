@@ -22,7 +22,8 @@ export class FormComponent {
         Validators.maxLength(5)
       ])
     ],
-    phone: [null, Validators.required]
+    phone: [null],
+    email: [null]
   });
 
   states = [
