@@ -91,11 +91,11 @@ export class FormComponent {
 
   constructor(private fb: FormBuilder) {}
 
-  onFillNameClicked(): void {
-    this.addressForm.patchValue({
-      firstName: 'Karol'
-    });
-  }
+  // onFillNameClicked(): void {
+  //   this.addressForm.patchValue({
+  //     firstName: 'Karol'
+  //   });
+  // }
 
   onFillAllClicked(): void {
     this.addressForm.setValue({
@@ -115,6 +115,8 @@ export class FormComponent {
   onSubmit() {
     // if (this.addressForm.status === 'VALID') {
     alert('Thanks! But this was a fake page :D');
+    console.log(this.addressForm);
+    console.log(this.addressForm.value);
     // }
   }
 
