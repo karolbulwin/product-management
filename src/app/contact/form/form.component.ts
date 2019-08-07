@@ -22,6 +22,7 @@ export class FormComponent {
         Validators.maxLength(5)
       ])
     ],
+    notification: [null],
     phone: [null],
     email: [null]
   });
@@ -100,5 +101,20 @@ export class FormComponent {
     // if (this.addressForm.status === 'VALID') {
     alert('Thanks! But this was a fake page :D');
     // }
+  }
+
+  setNotification(notifyVia: string): void {
+    const phoneControl = this.addressForm.get('phone');
+    const emailControl = this.addressForm.get('email');
+
+    if (notifyVia === 'text') {
+      emailControl.setValidators(Validators.required);
+      phoneControl.clearValidators();
+    } else {
+      phoneControl.setValidators(Validators.required);
+      emailControl.clearValidators();
+    }
+    phoneControl.updateValueAndValidity();
+    emailControl.updateValueAndValidity();
   }
 }

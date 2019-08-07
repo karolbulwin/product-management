@@ -109,6 +109,21 @@
         </div>
       </div>
       <div class="row">
+        <div class="col notify-container">
+          <mat-radio-group formControlName="notification">
+            <mat-label>Choose a form of communication:</mat-label>
+            <div class="notify-bttns">
+              <mat-radio-button value="speak" (click)="setNotification('speak')"
+                >Phone</mat-radio-button
+              >
+              <mat-radio-button value="text" (click)="setNotification('text')"
+                >Email</mat-radio-button
+              >
+            </div>
+          </mat-radio-group>
+        </div>
+      </div>
+      <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
             <input
