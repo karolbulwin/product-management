@@ -129,7 +129,14 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="accent" type="submit">Submit</button>
+      <button
+        mat-raised-button
+        color="accent"
+        type="submit"
+        [disabled]="!addressForm.valid"
+      >
+        Submit
+      </button>
     </mat-card-actions>
   </mat-card>
 </form>

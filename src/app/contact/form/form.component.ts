@@ -90,8 +90,8 @@ export class FormComponent {
   constructor(private fb: FormBuilder) {}
 
   onSubmit() {
-    if (this.addressForm.status === 'VALID') {
-      alert('Thanks! But this was a fake page :D');
-    }
+    // if (this.addressForm.status === 'VALID') {
+    alert('Thanks! But this was a fake page :D');
+    // }
   }
 }
