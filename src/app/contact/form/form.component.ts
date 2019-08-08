@@ -1,5 +1,23 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  Validators,
+  AbstractControl,
+  ValidatorFn
+} from '@angular/forms';
+
+function companyValidator(min: number, max: number): ValidatorFn {
+  return (
+    c: AbstractControl
+  ): {
+    [key: string]: boolean;
+  } | null => {
+    if (c.value.length < min || c.value.length > max) {
+      return { range: true };
+    }
+    return null;
+  };
+}
 
 @Component({
   selector: 'app-form',
@@ -8,7 +26,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class FormComponent {
   addressForm = this.fb.group({
-    company: [null, Validators.required],
+    company: ['', companyValidator(1, 10)],
     firstName: [null, Validators.required],
     lastName: [null, Validators.required],
     address: [null, Validators.required],
