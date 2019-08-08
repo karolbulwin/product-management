@@ -126,7 +126,13 @@ export class FormComponent {
       postalCode: '00000',
       notification: 'text',
       phone: null,
-      email: 'somebody@somewhere.com'
+      email: 'somebody@somewhere.com',
+      productGroup: {
+        product: 'Any',
+        confirmProduct: 'Any'
+      }
+    });
+  }
     });
     this.addressForm
       .get('notification')

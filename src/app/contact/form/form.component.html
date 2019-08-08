@@ -154,6 +154,48 @@
           </mat-form-field>
         </div>
       </div>
+      <div formGroupName="productGroup">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Product" formControlName="product" />
+              <mat-error
+                *ngIf="
+                  addressForm.get('productGroup.product').hasError('required')
+                "
+              >
+                Product name is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <input
+                matInput
+                placeholder="Confirm Product"
+                formControlName="confirmProduct"
+              />
+              <mat-error
+                *ngIf="
+                  addressForm
+                    .get('productGroup.confirmProduct')
+                    .hasError('required')
+                "
+              >
+                Please confirm <strong>product name</strong>
+              </mat-error>
+              <mat-error
+                *ngIf="addressForm.get('productGroup').hasError('noMatch')"
+              >
+                The confirmation does not match
+                <strong>the product name</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <button
