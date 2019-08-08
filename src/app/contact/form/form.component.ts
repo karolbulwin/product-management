@@ -7,6 +7,28 @@ import {
   FormGroup
 } from '@angular/forms';
 
+function productMatcher(c: AbstractControl): { [key: string]: boolean } | null {
+  const productControl = c.get('product');
+  const confirmControl = c.get('confirmProduct');
+
+  console.log('productControl::value:' + productControl.value);
+  console.log('confirmControl:value::' + confirmControl.value);
+
+  console.log('productControl::pristine:' + productControl.pristine);
+  console.log('confirmControl::pristine:' + confirmControl.pristine);
+
+  if (productControl.pristine || confirmControl.pristine) {
+    return null;
+  }
+
+  if (productControl.value === confirmControl.value) {
+    return null;
+  }
+  confirmControl.setErrors({ noMach: true });
+  console.log('here');
+  return { noMatch: true };
+}
+
 function companyValidator(min: number, max: number): ValidatorFn {
   return (
     c: AbstractControl
