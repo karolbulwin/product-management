@@ -152,6 +152,9 @@
             >
               Email is <strong>required</strong>
             </mat-error>
+            <mat-error *ngIf="addressForm.controls['email'].hasError('email')">
+              Email is <strong>invalid</strong>
+            </mat-error>
           </mat-form-field>
         </div>
       </div>

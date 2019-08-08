@@ -143,7 +143,7 @@ export class FormComponent {
     const emailControl = this.addressForm.get('email');
 
     if (notifyVia === 'text') {
-      emailControl.setValidators(Validators.required);
+      emailControl.setValidators([Validators.required, Validators.email]);
       phoneControl.clearValidators();
     } else {
       phoneControl.setValidators(Validators.required);
