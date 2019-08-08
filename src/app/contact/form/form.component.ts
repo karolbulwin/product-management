@@ -128,6 +128,9 @@ export class FormComponent {
       phone: null,
       email: 'somebody@somewhere.com'
     });
+    this.addressForm
+      .get('notification')
+      .valueChanges.subscribe(value => this.setNotification(value));
   }
 
   onSubmit() {
