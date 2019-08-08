@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   Validators,
@@ -24,26 +24,8 @@ function companyValidator(min: number, max: number): ValidatorFn {
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent {
-  addressForm = this.fb.group({
-    company: ['', companyValidator(1, 10)],
-    firstName: [null, Validators.required],
-    lastName: [null, Validators.required],
-    address: [null, Validators.required],
-    city: [null, Validators.required],
-    state: [null, Validators.required],
-    postalCode: [
-      null,
-      Validators.compose([
-        Validators.required,
-        Validators.minLength(5),
-        Validators.maxLength(5)
-      ])
-    ],
-    notification: [null, Validators.required],
-    phone: [null],
-    email: [null]
-  });
+export class FormComponent implements OnInit {
+  addressForm: FormGroup;
 
   states = [
     { name: 'Alabama', abbreviation: 'AL' },
@@ -133,6 +115,33 @@ export class FormComponent {
       }
     });
   }
+
+  ngOnInit(): void {
+    this.addressForm = this.fb.group({
+      company: ['', companyValidator(1, 10)],
+      firstName: [null, Validators.required],
+      lastName: [null, Validators.required],
+      address: [null, Validators.required],
+      city: [null, Validators.required],
+      state: [null, Validators.required],
+      postalCode: [
+        null,
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(5)
+        ])
+      ],
+      notification: [null, Validators.required],
+      phone: [null],
+      email: [null],
+      productGroup: this.fb.group(
+        {
+          product: [null, Validators.required],
+          confirmProduct: [null, Validators.required]
+        },
+        { validator: productMatcher }
+      )
     });
     this.addressForm
       .get('notification')
