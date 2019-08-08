@@ -3,7 +3,8 @@ import {
   FormBuilder,
   Validators,
   AbstractControl,
-  ValidatorFn
+  ValidatorFn,
+  FormGroup
 } from '@angular/forms';
 
 function companyValidator(min: number, max: number): ValidatorFn {
