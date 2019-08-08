@@ -29,7 +29,7 @@ function productMatcher(c: AbstractControl): { [key: string]: boolean } | null {
   return { noMatch: true };
 }
 
-function companyValidator(min: number, max: number): ValidatorFn {
+function lengthValidator(min: number, max: number): ValidatorFn {
   return (
     c: AbstractControl
   ): {
@@ -141,8 +141,8 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.addressForm = this.fb.group({
-      company: ['', companyValidator(1, 10)],
-      firstName: [null, Validators.required],
+      company: ['', lengthValidator(1, 10)],
+      firstName: [null, [Validators.required, Validators.minLength(3)]],
       lastName: [null, Validators.required],
       address: [null, Validators.required],
       city: [null, Validators.required],
