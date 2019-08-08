@@ -160,8 +160,11 @@ export class FormComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       productGroup: this.fb.group(
         {
-          product: [null, Validators.required],
-          confirmProduct: [null, Validators.required]
+          product: [
+            '',
+            Validators.compose([Validators.required, lengthValidator(3, 10)])
+          ],
+          confirmProduct: ['', Validators.required]
         },
         { validator: productMatcher }
       )

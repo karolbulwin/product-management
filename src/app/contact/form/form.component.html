@@ -166,6 +166,14 @@
               >
                 Product name is <strong>required</strong>
               </mat-error>
+              <mat-error
+                *ngIf="
+                  addressForm.get('productGroup.product').hasError('range') &&
+                  !addressForm.get('productGroup.product').hasError('required')
+                "
+              >
+                Product name should be <strong>3-10 characters</strong>
+              </mat-error>
             </mat-form-field>
           </div>
         </div>
