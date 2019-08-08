@@ -22,7 +22,7 @@ export class FormComponent {
         Validators.maxLength(5)
       ])
     ],
-    notification: [null],
+    notification: [null, Validators.required],
     phone: [null],
     email: [null]
   });
