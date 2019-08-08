@@ -155,9 +155,9 @@ export class FormComponent implements OnInit {
           Validators.maxLength(5)
         ])
       ],
-      notification: [null, Validators.required],
+      notification: ['text', Validators.required],
       phone: [null],
-      email: [null],
+      email: ['', [Validators.required, Validators.email]],
       productGroup: this.fb.group(
         {
           product: [null, Validators.required],
